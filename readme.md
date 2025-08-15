@@ -13,6 +13,10 @@ Construída com HTML, CSS e JavaScript, a integração com a API pública do Git
 - JavaScript (ES6)
 - Fetch API
 
+## Link do projeto
+O projeto está disponível para teste online. Acesse a demo [clicando aqui](https://devseravali.github.io/projeto-fetch-git/)
+
+
 ## 🖼 Prints da aplicação
 **Tela Inicial**
 <img src="src/images/tela-inicial.png">

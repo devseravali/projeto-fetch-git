@@ -6,6 +6,8 @@ const screen = {
                         <div class="data">
                           <h1>${user.name ?? 'Não possui nome cadastrado 😢' }</h1>
                           <p>${user.bio ?? 'Não possui bio cadastrada 😢'}</p>
+                          <p><strong>Seguidores:</strong> ${user.followers}</p>
+                          <p><strong>Seguindo:</strong> ${user.following}</p>
                       </div>
                       </div>`
 
@@ -24,4 +26,4 @@ const screen = {
     }
 }
 
-export { screen}
+export { screen }

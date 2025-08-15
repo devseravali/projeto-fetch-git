@@ -39,8 +39,17 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepositories(userName);
 
+   async function fetchFollowersAndFollowing() {
+       const followersResponse = await fetch(userResponse.followers_url);
+       const followingResponse = await fetch(userResponse.following_url);
+       const followersData = await followersResponse.json();
+       const followingData = await followingResponse.json();
+       user.setFollowers(followersData);
+       user.setFollowing(followingData);
+   }
+   fetchFollowersAndFollowing();
+
     user.setInfo(userResponse)
-    user.setRepositories(repositoriesResponse)
-    
+    user.setRepositories(repositoriesResponse)    
     screen.renderUser(user)
 }

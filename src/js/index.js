@@ -40,12 +40,12 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepositories(userName);
 
-    async function Events() {
+    async function baseEvents() {
         const eventsResponse = await fetch(`https://api.github.com/users/${userName}/events`);
         const eventsData = await eventsResponse.json();
         user.setEvents(eventsData);
     }
-    await Events();
+    await baseEvents();
 
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)

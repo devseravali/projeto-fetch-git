@@ -20,10 +20,35 @@ const screen = {
                                                         <ul>${repositoriesItens}</ul>
                                                     </div>`
                 }
+
+                this.renderEvents(user);
     }, 
     renderNotFound(){
         this.userProfile.innerHTML = `<h3>Usuário não encontrado</h3>`
-    }
+    },
+    renderEvents(user) {
+        let events = '<ul>';
+        user.events.slice(0, 10).forEach(event => {
+            if(event.type === 'PushEvent' && event.payload && Array.isArray(event.payload.commits)) { let commitList = '<ul>';
+                event.payload.commits.forEach(commit => {
+                    commitList += `<li><h3><strong>Commit:</strong> ${commit.message}</h3></li>`;
+                });
+                commitList += '</ul>';
+                events += `<li><h4><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a>${commitList}</h4></li>`;
+            }
+           
+
+        }) 
+
+        if (!user.events || !Array.isArray(user.events)) return;
+
+        if(user.events.length > 0){
+            this.userProfile.innerHTML += `<div class="events section">
+                                         <h2>Commits</h2>
+                                         <ul>${events}</ul>
+                                     </div>`;
+        }
+    } 
 }
 
 export { screen }

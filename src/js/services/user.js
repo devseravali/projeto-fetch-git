@@ -1,13 +1,8 @@
-import { baseUrl } from '../variables.js'
-import { githubToken } from '../variables.js';
+import { baseUrl } from '../variables.js';
 
 async function getUser(userName){
-    const response = await fetch(`${baseUrl}/${userName}`, {
-        headers: {
-            Authorization: `token ${githubToken}`
-        }
-    });
+    const response = await fetch(`${baseUrl}/${userName}`);
     return await response.json();
 }
 
-export { getUser }
+export { getUser };

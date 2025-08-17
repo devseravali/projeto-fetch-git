@@ -12,6 +12,7 @@ Construída com HTML, CSS e JavaScript, a integração com a API pública do Git
 - CSS3
 - JavaScript (ES6)
 - Fetch API
+- Font Awesome (para ícones)
 
 ## Link do projeto
 O projeto está disponível para teste online. Acesse a demo [clicando aqui](https://devseravali.github.io/projeto-fetch-git/)
@@ -24,28 +25,57 @@ O projeto está disponível para teste online. Acesse a demo [clicando aqui](htt
 **Resultado de Busca**
 <img src="src/images/resultado-de-busca.png">
 
+**Lista de Commits**
+<img src="src/images/commits.png">
+
 **Lista de Repositórios**
 <img src="src/images/lista-de-repositorios.png">
 
 ## 📂 Estrutura do projeto
 ```
-projeto-fetch-git/
-├── index.html
+Projeto-fetch-git/
+── index.html
+├── readme.md
 ├── src/
 │ ├── css/
 │ │ ├── reset.css
-│ │ ├── responsivo.css
-│ │ └── style.css
-│ ├── js/
-│ │ ├── index.js
-│ │ ├── variables.js
-│ │ ├── objects/
-│ │ │ ├── screen.js
-│ │ │ └── user.js
-│ │ └── services/
-│ │ ├── repositories.js
+│ │ ├── style.css
+│ │ └── responsivo.css
+│ ├── images/
+│ │ ├── tela-inicial.png
+│ │ ├── resultado-de-busca.png
+│ │ ├── lista-de-repositorios.png
+│ │ └── commits.png
+│ └── js/
+│ ├── index.js
+│ ├── variables.js
+│ ├── objects/
+│ │ ├── screen.js
 │ │ └── user.js
+│ └── services/
+│ ├── user.js
+│ └── repositories.js
 ```
+
+## 🔹Melhorias Implementadas (Desafio Avançado da Quest)
+- 📊 Últimos eventos do usuário:
+Listagem de até 10 últimos eventos do usuário.
+Exibe apenas os eventos:
+PushEvent → mostra nome do repositório e mensagem de commit.
+
+
+- 📂 Repositórios
+
+Agora além do nome e link do repositório, também são exibidas:
+
+⭐ Quantidade de estrelas
+
+🍴 Quantidade de forks
+
+👀 Quantidade de watchers
+
+💻 Linguagem principal do repositório
+
 _ _ _ 
 
 ### 🙏 Agradecimentos

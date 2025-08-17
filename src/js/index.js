@@ -2,8 +2,6 @@ import { getUser } from './services/user.js';
 import { getRepositories } from './services/repositories.js';
 import { user } from './objects/user.js';
 import { screen } from './objects/screen.js';
-import { baseEvents } from './variables.js';
-
 
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value
@@ -17,9 +15,8 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
     const isEnterKeyPressed = key === 13
 
     if(isEnterKeyPressed){
-
-    validateEmptyInput(userName)
-    getUserData(userName);
+        if (validateEmptyInput(userName)) return
+        getUserData(userName);
     }
 })
 
